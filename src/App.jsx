@@ -12,6 +12,7 @@ import { validateCNPJ, isValidCnpjFormat } from "./pages/Exercise1/utils";
 import Exercise1 from "./pages/Exercise1/exercise1";
 import Exercise2 from "./pages/Exercise2/exercise2";
 import Exercise4 from "./pages/Exercise4/exercise4";
+import Exercise5 from "./pages/Exercise5/exercise5";
 
 function App() {
   const [inputCNPJ, setInputCnpj] = useState("");
@@ -66,6 +67,12 @@ function App() {
               <Link to="/exercise4">Exercício 4</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <Link to="/exercise5">Exercício 5</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
         </Breadcrumb>
         <Routes>
           <Route
@@ -78,8 +85,9 @@ function App() {
               />
             }
           />
-          <Route exact path="/exercise2" element={<Exercise2 />} />
-          <Route exact path="/exercise4" element={<Exercise4 />} />
+          <Route path="/exercise2" element={<Exercise2 />} />
+          <Route path="/exercise4" element={<Exercise4 />} />
+          <Route path="/exercise5" element={<Exercise5 />} />
         </Routes>
       </BrowserRouter>
     </VStack>
