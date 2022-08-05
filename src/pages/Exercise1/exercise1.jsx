@@ -1,7 +1,46 @@
-import React from "react";
-import { Input, Button, Flex, VStack, Heading } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Input, Button, Flex, VStack, Heading, useToast } from "@chakra-ui/react";
 
-function Exercise1({ handleInputCNPJ, setInputCnpj }) {
+import { validateCNPJ, isValidCnpjFormat } from "./utils";
+
+function Exercise1() {
+  const [inputCNPJ, setInputCnpj] = useState("");
+  const toast = useToast();
+
+  function handleInputCNPJ() {
+    if (isValidCnpjFormat(inputCNPJ)) {
+      const cnpj = inputCNPJ
+        .replace(/[^\d]+/g, "")
+        .split("")
+        .map((digit) => parseInt(digit));
+
+      const isValidCNPJ = validateCNPJ(cnpj);
+
+      if (isValidCNPJ) {
+        toast({
+          title: "CNPJ válido",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "CNPJ inválido",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+      }
+    } else {
+      toast({
+        title: "Não parece com CNPJ",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  }
+
   return (
     <Flex h="90vh" align="center">
       <VStack>

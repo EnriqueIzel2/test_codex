@@ -1,57 +1,18 @@
-import { useState } from "react";
+import React from "react";
 import {
   VStack,
-  useToast,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
 } from "@chakra-ui/react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
-import { validateCNPJ, isValidCnpjFormat } from "./pages/Exercise1/utils";
 import Exercise1 from "./pages/Exercise1/exercise1";
 import Exercise2 from "./pages/Exercise2/exercise2";
 import Exercise4 from "./pages/Exercise4/exercise4";
 import Exercise5 from "./pages/Exercise5/exercise5";
 
 function App() {
-  const [inputCNPJ, setInputCnpj] = useState("");
-  const toast = useToast();
-
-  function handleInputCNPJ() {
-    if (isValidCnpjFormat(inputCNPJ)) {
-      const cnpj = inputCNPJ
-        .replace(/[^\d]+/g, "")
-        .split("")
-        .map((digit) => parseInt(digit));
-
-      const isValidCNPJ = validateCNPJ(cnpj);
-
-      if (isValidCNPJ) {
-        toast({
-          title: "CNPJ válido",
-          status: "success",
-          duration: 3000,
-          isClosable: true,
-        });
-      } else {
-        toast({
-          title: "CNPJ inválido",
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-        });
-      }
-    } else {
-      toast({
-        title: "Não parece com CNPJ",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-    }
-  }
-
   return (
     <VStack>
       <BrowserRouter>
@@ -81,16 +42,7 @@ function App() {
           </BreadcrumbItem>
         </Breadcrumb>
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Exercise1
-                setInputCnpj={setInputCnpj}
-                handleInputCNPJ={handleInputCNPJ}
-              />
-            }
-          />
+          <Route exact path="/" element={<Exercise1 />} />
           <Route path="/exercise2" element={<Exercise2 />} />
           <Route path="/exercise4" element={<Exercise4 />} />
           <Route path="/exercise5" element={<Exercise5 />} />
