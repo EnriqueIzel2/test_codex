@@ -1,17 +1,19 @@
-export function intersects(rec1, rec2) {
-  let x = rec1[0];
-  let y = rec1[1];
-  let a = rec1[2];
-  let b = rec1[3];
-
-  let x2 = rec2[0];
-  let y2 = rec2[1];
-  let a2 = rec2[2];
-  let b2 = rec2[3];
-
-  if (a < x2 || a2 < x || b < y2 || b2 < y) {
-    false;
-  } else {
-    true;
+export class RectanglePoints {
+  constructor(coordinates) {
+    this.x1 = coordinates[0];
+    this.y1 = coordinates[1];
+    this.x2 = coordinates[2];
+    this.y2 = coordinates[3];
   }
+}
+
+export function intersects(rec1, rec2) {
+  if (rec1.x1 > rec2.x2 || rec2.x1 > rec1.x2) {
+    return false;
+  }
+  if (rec1.y1 > rec2.y2 || rec2.y1 > rec1.y2) {
+    return false;
+  }
+
+  return true;
 }

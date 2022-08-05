@@ -3,7 +3,7 @@ import { Input, Button, Flex, VStack, Heading } from "@chakra-ui/react";
 
 function Exercise1({ handleInputCNPJ, setInputCnpj }) {
   return (
-    <Flex h="90vh">
+    <Flex h="90vh" align="center">
       <VStack>
         <Heading>Validador de CNPJ</Heading>
         <form>
