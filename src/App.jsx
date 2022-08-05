@@ -64,6 +64,12 @@ function App() {
 
           <BreadcrumbItem>
             <BreadcrumbLink>
+              <Link to="/exercise2">Exercício 2</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <BreadcrumbLink>
               <Link to="/exercise4">Exercício 4</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
