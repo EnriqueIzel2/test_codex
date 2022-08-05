@@ -62,7 +62,7 @@ Verificar se o número recebido tem o formato de um CNPJ e verificar se é váli
 
 <h2 id="exercicio2">Exercício 2</h2>
 
-Verificar se há interseção dois retângulos.
+Verificar se há interseção entre dois retângulos.
 
 <img src="https://media.giphy.com/media/uj1iYD7vV1dgRVbZYz/giphy.gif" />
 
@@ -70,7 +70,7 @@ Verificar se há interseção dois retângulos.
 
 <h2 id="exercicio4">Exercício 4</h2>
 
-Criar um Todo List simples que permita a criar e excluir tarefas. A aplicação deve persistir as tarefas usando um tipo de armazenamento(arquivos, Firebase, database, etc).
+Criar um Todo List simples que permita criar e excluir tarefas. A aplicação deve persistir as tarefas usando um tipo de armazenamento(arquivos, Firebase, database, etc).
 
 <img src="https://media.giphy.com/media/M9OIX4myXY0Iilc5WN/giphy.gif" />
 
